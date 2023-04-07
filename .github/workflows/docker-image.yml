@@ -32,4 +32,4 @@ jobs:
         
     - name: Push the docker image
       run: | 
-        docker push tonydock2/docker-graphql:1.0.1 .
+        docker push tonydock2/docker-graphql:1.0.1
