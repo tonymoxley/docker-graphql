@@ -36,16 +36,16 @@ jobs:
        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
        echo "New version: $NEW_VERSION"
        
-#    - name: Build the docker image
-#      env:
-#       NEW_VERSION: ${{ steps.version.outputs.version }}
-#      run: |
-#        docker build -t tonydock2/docker-graphql:$NEW_VERSION .
-#        docker build -t tonydock2/docker-graphql:latest .
+    - name: Build the docker image
+      env:
+       NEW_VERSION: ${{ steps.version.outputs.version }}
+      run: |
+        docker build -t tonydock2/docker-graphql:$NEW_VERSION .
+        docker build -t tonydock2/docker-graphql:latest .
         
-#    - name: Push the docker image
-#      env:
-#       NEW_VERSION: ${{ steps.version.outputs.version }}
-#      run: | 
-#        docker push tonydock2/docker-graphql:$NEW_VERSION
-#        docker push tonydock2/docker-graphql:latest
+    - name: Push the docker image
+      env:
+       NEW_VERSION: ${{ steps.version.outputs.version }}
+      run: | 
+        docker push tonydock2/docker-graphql:$NEW_VERSION
+        docker push tonydock2/docker-graphql:latest
